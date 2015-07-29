@@ -11,19 +11,18 @@ var main = function(){
 
   function createTable(row, column, aRow, aColumn){
     var complete ='';
-    var num = 66;
+    var num = 65;
     for(var i = 0; i < column; i++) {
-      //complete = '<tr>' + '<td>' + String.fromCharCode(num) + '</td>' + complete;
-      //num++;
-      for(var j = 0; j < row; j++){
+      complete = '<tr>' + '<td>' + String.fromCharCode(num) + '</td>' + complete;
+      num++;
+      for(var j = 0; j < 2; j++){
           complete += '<td/>';
       }
       complete = complete + '</tr>';
+      console.log(complete);
     }
-      aColumn.append(complete);
-
-
-  }
+    aColumn.append(complete);
+}
 
   createTable(row, column, aRow, aColumn);
   //$('#table').append((newRow.append(newContent).append(anotherContent)));
