@@ -11,15 +11,16 @@ var main = function(){
 
   function createTable(row, column, aRow, aColumn){
     var complete ='';
+    var buffer ='';
     var num = 65;
     for(var i = 0; i < column; i++) {
-      complete = '<tr>' + '<td>' + String.fromCharCode(num) + '</td>' + complete;
+      buffer = '<tr>' + '<td>' + String.fromCharCode(num) + '</td>' + buffer;
       num++;
-      for(var j = 0; j < 2; j++){
-          complete += '<td/>';
+      for(var j = 0; j < row-1; j++){
+          buffer += '<td/>';
       }
-      complete = complete + '</tr>';
-      console.log(complete);
+      complete = complete + buffer + '</tr>';
+      buffer = '';
     }
     aColumn.append(complete);
 }
